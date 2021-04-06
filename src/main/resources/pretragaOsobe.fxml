@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.ekrani.pretraga.PretragaOsobeController">
+    <top>
+        <fx:include fx:id="izbornik" source="izbornik.fxml" />
+    </top>
+    <center>
+        <GridPane alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="432.0" prefWidth="768.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints maxHeight="90.75471993619847" minHeight="10.0" prefHeight="28.98114537327011" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="167.4528463593835" minHeight="10.0" prefHeight="156.67923866671254" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="151.24530499717366" minHeight="9.867941161414137" prefHeight="44.37737109305476" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="232.75472137027492" minHeight="10.0" prefHeight="203.77358623109484" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <Label alignment="CENTER" text="Pretraživanje osobe" GridPane.columnSpan="2" GridPane.halignment="CENTER">
+                    <font>
+                        <Font name="Segoe UI Bold" size="20.0" />
+                    </font>
+                </Label>
+                <Label text="Ime osobe:" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="TOP">
+                    <font>
+                        <Font name="Segoe UI" size="14.0" />
+                    </font>
+                    <GridPane.margin>
+                        <Insets right="10.0" top="15.0" />
+                    </GridPane.margin>
+                </Label>
+                <Label text="Prezime osobe:" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="TOP">
+                    <GridPane.margin>
+                        <Insets bottom="10.0" right="10.0" top="55.0" />
+                    </GridPane.margin>
+                    <font>
+                        <Font name="Segoe UI" size="14.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="trazenoIme" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.valignment="TOP">
+                    <GridPane.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                    </GridPane.margin>
+                </TextField>
+                <Button mnemonicParsing="false" onAction="#pretrazi" prefHeight="18.0" prefWidth="61.0" text="Pretraga" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="TOP">
+               <GridPane.margin>
+                  <Insets top="10.0" />
+               </GridPane.margin></Button>
+                <TableView fx:id="osobaTable" prefHeight="200.0" prefWidth="620.0" GridPane.columnSpan="2" GridPane.rowIndex="3">
+                    <columns>
+                        <TableColumn fx:id="imeOsobeColumn" prefWidth="172.07550573349" text="Ime" />
+                        <TableColumn fx:id="prezimeOsobeColumn" minWidth="0.0" prefWidth="199.2452392578125" text="Prezime" />
+                  <TableColumn fx:id="bolestOsobeColumn" prefWidth="142.18869018554688" text="Bolest" />
+                  <TableColumn fx:id="zupanijaOsobeColumn" prefWidth="236.37738037109375" text="Županija" />
+                    </columns>
+                    <GridPane.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" />
+                    </GridPane.margin>
+                </TableView>
+                <TextField fx:id="trazenoPrezime" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.valignment="TOP">
+                    <GridPane.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="50.0" />
+                    </GridPane.margin>
+                </TextField>
+            <Label text="Zupanija osobe:" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+               <GridPane.margin>
+                  <Insets bottom="10.0" right="10.0" />
+               </GridPane.margin>
+               <font>
+                  <Font name="Segoe UI" size="14.0" />
+               </font>
+            </Label>
+            <Label text="Bolest osobe:" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+               <font>
+                  <Font name="Segoe UI" size="14.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="45.0" right="10.0" />
+               </GridPane.margin>
+            </Label>
+            <TextField fx:id="trazenaBolest" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+               <GridPane.margin>
+                  <Insets bottom="40.0" left="10.0" right="10.0" />
+               </GridPane.margin>
+            </TextField>
+            <TextField fx:id="trazenaZupanija" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+               <GridPane.margin>
+                  <Insets bottom="5.0" left="10.0" right="10.0" />
+               </GridPane.margin>
+            </TextField>
+            </children>
+        </GridPane>
+    </center>
+</BorderPane>
